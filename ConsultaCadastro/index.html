@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente</title>
+    <!-- CSS do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fonte Karla - Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row w-100">
+            <!-- Coluna 1: Formulários -->
+            <div class="col-md-6">
+                <!-- Formulário buscar CPF -->
+                <div class="custom-container mb-4">
+                    <div class="form-title">Buscar por CPF</div>
+                    <form class="form-content" onsubmit="event.preventDefault(); buscarFuncionario();">
+                        <div class="mb-3">
+                            <input type="text" id="cpf" class="form-control" placeholder="Digite o CPF">
+                        </div>
+                        <button type="submit" class="btn btn-outline-light mt-3">Buscar</button>
+                    </form>
+                </div>
+
+                <!-- Formulário cadastro -->
+                <div class="custom-container mt-4">
+                    <div class="form-title">Cadastro de Cliente</div>
+                    <form onsubmit="cadastrarCliente(event)" class="form-content">
+                        <div class="mb-3">
+                            <label for="cpf" class="form-label">CPF:</label>
+                            <input type="text" class="form-control" id="cadCpf" name="cpf" placeholder="Digite o CPF" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome:</label>
+                            <input type="text" class="form-control" id="cadNome" name="nome" placeholder="Digite o nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="text" class="form-control" id="cadEmail" name="email" placeholder="Digite o email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefone" class="form-label">Telefone:</label>
+                            <input type="tel" class="form-control" id="cadTel" name="telefone" placeholder="Digite o telefone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nascimento" class="form-label">Data de Nascimento:</label>
+                            <input type="date" class="form-control" id="cadNascimento" name="nascimento" placeholder="Selecione a data de nascimento" required>
+                        </div>
+                        <button type="submit" class="btn btn-outline-light mt-3" id="btn-cadastrar">Enviar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Coluna 2: Identificação -->
+            <div class="col-md-6">
+                <div class="custom-container cracha">
+                    <div class="badge-container">
+                        <div class="badge-image">
+                            <i class="fas fa-user" style="font-size: 50px; color: white;"></i>
+                        </div>
+                        <div class="cracha-info">
+                            <br>
+                            <h5 id="nome" class="badge-name">Nome</h5>
+                            <br>
+                            <p class="email" id="email">Email: </p>
+                            <p class="phone" id="telefone">Telefone: </p>
+                            <p class="address" id="nascimento">Data de Nascimento:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
